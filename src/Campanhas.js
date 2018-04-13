@@ -34,13 +34,25 @@ class Campanhas extends Component{
                 <div class="product-item-description d-flex ml-auto">
                     <div class="p-5 rounded">
                     <p class="mb-0">{campanha.descricao}</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p>Meta: R$ 5.000,00 / Atingidos: R$ 2.500,00</p>
-                    <div>
-                        <button class="btn btn-success">Contribuir</button>
-                    </div>
+                    { 
+                        campanha.tipo === 'dinheiro' && 
+                        <div>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p>Meta: R$ 5.000,00 / Atingidos: R$ 2.500,00</p>
+                            <div>
+                                <button class="btn btn-success">Contribuir</button>
+                            </div>
+                        </div> 
+                    }
+                    { 
+                        campanha.tipo === 'produtos' &&
+                        <div>
+                            <h4>Como Doar:</h4>
+                            <p>{campanha.comoDoar}</p>
+                        </div>
+                    }
                     </div>
                 </div>
                 <div class="ml-auto">

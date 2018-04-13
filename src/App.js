@@ -7,6 +7,8 @@ import Sobre from './Sobre'
 import Contato from './Contato'
 import Campanhas from './Campanhas'
 import base from './base'
+import Admin from './Admin'
+import Login from './Login'
 
 class App extends Component {
   constructor(props){
@@ -30,16 +32,13 @@ class App extends Component {
       <Router>
       <div>
         <Header />
-        <div>
-          <h1>
-            Contador: {JSON.stringify(this.state.contador)}
-          </h1>
-        </div>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/sobre" component={Sobre} />
           <Route path="/campanhas" component={Campanhas} />
           <Route path="/contato" component={Contato} />
+          <Route path="/admin" component={Admin} />
+          <Route path='/login' component={Login} />
           <Route component={Home} />
         </Switch>
         <Footer />
