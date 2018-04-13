@@ -23,14 +23,17 @@ const Header = () => {
                     </Link>
                     </li>
                     <li className='nav-item px-lg-4'>
-                    <Link className='nav-link text-uppercase text-expanded' to='/sobre'>Sobre</Link>
+                        <Link className='nav-link text-uppercase text-expanded' to='/sobre'>Sobre</Link>
                     </li>
                     <li className='nav-item px-lg-4'>
-                    <Link className='nav-link text-uppercase text-expanded' to='/campanhas'>Campanhas</Link>
+                        <Link className='nav-link text-uppercase text-expanded' to='/campanhas'>Campanhas</Link>
                     </li>
                     <li className='nav-item px-lg-4'>
-                    <Link className='nav-link text-uppercase text-expanded' to='/contato'>Contato</Link>
+                        <Link className='nav-link text-uppercase text-expanded' to='/contato'>Contato</Link>
                     </li>
+                    <li className='nav-item px-lg-4'>                        
+                        <Link className='nav-link text-uppercase text-expanded' to='/admin'>Administração</Link>
+                    </li>                    
                 </ul>
                 </div>
             </div>
