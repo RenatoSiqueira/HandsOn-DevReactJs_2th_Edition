@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import { auth } from './base'
 
+import AdminHome from './AdminHome'
+import Loading from './Loading'
 import AdminCampanhas from './AdminCampanhas'
-
-const AdminHome = props => <p>Seja Bem Vindo</p>
 
 class Admin extends Component{
     constructor(props){
@@ -29,14 +29,13 @@ class Admin extends Component{
     
     render(){
         if(this.state.isAuthing){
-            return <p>Aguarde...</p>
+            return <Loading />
         }
         if(!this.state.isLoggedIn){
             return <Redirect to='/login' />
         } else 
         return(
-            <div className='card'>
-                <h1>Painel Administrativo</h1>
+            <div>
                 <Route path='/' component={AdminHome} />
                 <Route path={`${this.props.match.url}/campanhas`} component={AdminCampanhas} />
             </div>
