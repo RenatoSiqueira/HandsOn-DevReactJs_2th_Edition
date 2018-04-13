@@ -37,12 +37,16 @@ class AdminCampanhas extends Component{
     }
     renderCampanha(key, campanha){
         return (
-            <li key={key}>
-                {campanha.nome}
-                &nbsp;
-                <button onClick={ () => 1 }>Editar</button>
-                <button onClick={ () => this.removeCampanha(key) }>Remover</button>
-            </li>
+            <div key={key} className='card'>
+                <div className='card-header'>
+                    Campanha Id: {key}
+                </div>
+                <div className='card-body'>
+                    <h5 className='card-title'>{campanha.nome}</h5>
+                    <p className='card-text'>{campanha.descricao}</p>
+                    <button onClick={ () => this.removeCampanha(key) } className='btn btn-danger'>Remover</button>
+                </div>
+            </div>
         )
     }
     handleSave(){
@@ -82,39 +86,86 @@ class AdminCampanhas extends Component{
     render(){
         return(
             <div className='card'>
-                <h1>Campanhas</h1>
-                <h2>Nova Campanha</h2>
-                Campanha: <input type='text' ref={ ref => this.nome = ref } />
-                Sub-Título: <input type='text' ref={ ref => this.subTitulo = ref } />
-                Descrição: <textarea ref={ ref => this.descricao = ref } cols='30' rows='10'></textarea>
-                Tipo: <br />
-                    <input type='radio' name='tipo' onClick={ ()=> this.setState({ tipo: 'doacao'}) }/> Doação <br />
-                    <input type='radio' name='tipo' onClick={ ()=> this.setState({ tipo: 'produtos'}) }/> Produtos <br />
+                <div className='container'>
+                    <h2>Nova Campanha</h2>
 
-                { this.state.tipo === 'doacao' &&
-                    <div>
-                        <h4>Doação</h4>
-                        Meta: <input type="text" ref={ ref => this.meta = ref }/>
-                        Doado: <input type="text" ref={ ref => this.doado = ref } defaultValue={0}/>
-                    </div> 
-                }
-
-                { this.state.tipo === 'produtos' &&
-                    <div>
-                        <h4>Produtos</h4>
-                        Como doar: <input type="text" ref={ ref => this.comoDoar = ref }/>
+                    <div className='form-group'>
+                        <label htmlFor='inputCampanha'>Campanha</label>
+                        <input type='text' className='form-control' id='inputCampanha' placeholder='Qual o Nome da Campanha?' ref={ ref => this.nome = ref } required />
+                        <small className='form-text text-muted'>Este é apenas o Título da Campanha.</small>
                     </div>
-                }
-                <button onClick={this.handleSave}>Salvar Nova Campanha</button>
-                <ul>
-                    { this.state.isLoading && <Loading /> }
-                    { Object
-                        .keys(this.state.campanhas)
-                        .map(
-                            key => this.renderCampanha( key, this.state.campanhas[key] )
-                        ) 
+                    <div className='form-group'>
+                        <label htmlFor='inputCampanha'>Sub Título</label>
+                        <input type='text' className='form-control' id='inputSubTitulo' placeholder='Qual o Sub Título?' ref={ ref => this.subTitulo = ref } required />
+                        <small className='form-text text-muted'>Frase de Chamada.</small>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='inputDescricao'>Descrição</label>
+                        <textarea className='form-control' id='inputCampanha' placeholder='Faça a descrição completa da campanha' rows='3' ref={ ref => this.descricao = ref } required />
+                        <small className='form-text text-muted'>Descrição da Campanha; Inclua o máximo de detalhes.</small>
+                    </div>                
+                    <div className='form-check form-check-inline'>
+                        <input className='form-check-input' type='radio' name='tipo' id='doacao' onClick={ ()=> this.setState({ tipo: 'doacao'}) } />
+                        <label className='form-check-label' htmlFor='doacao'>
+                            Doação
+                        </label>
+                    </div>
+                    <div className='form-check form-check-inline'>
+                        <input className='form-check-input' type='radio' name='tipo' id='produtos' onClick={ ()=> this.setState({ tipo: 'produtos'}) } />
+                        <label className='form-check-label' htmlFor='produtos'>
+                            Produtos
+                        </label>
+                    </div>
+                    { this.state.tipo === 'doacao' &&
+                        <div className='card'>
+                        <div className='card-header'>
+                            Doação
+                        </div>
+                        <ul className='list-group list-group-flush'>
+                            <li className='list-group-item'>
+                                <strong>Meta:</strong> <input className='form-control' type='text' ref={ ref => this.meta = ref }/>
+                            </li>
+                            <li className='list-group-item'>
+                                <strong>Doado:</strong> <input className='form-control' type='text' ref={ ref => this.doado = ref } defaultValue={0}/>
+                            </li>                    
+                        </ul>
+                        </div>
                     }
-                </ul>
+
+                    { this.state.tipo === 'produtos' &&
+                        <div className='card'>
+                        <div className='card-header'>
+                            Produtos
+                        </div>
+                        <ul className='list-group list-group-flush'>
+                            <li className='list-group-item'>
+                                <strong>Como doar:</strong> <input className='form-control' type='text' ref={ ref => this.comoDoar = ref }/>    
+                            </li>
+                        </ul>
+                        </div>
+                    }
+
+                    <div className='form-group'>
+                        <button onClick={this.handleSave} className='btn btn-primary'>Salvar Nova Campanha</button>
+                    </div>
+                </div>
+
+                { this.state.isLoading && <Loading /> }
+
+                { 
+                !this.state.isLoading && 
+                <section className='page-section'>
+                    <div className='container'>
+                        <h2>Campanhas</h2>
+                        { Object
+                            .keys(this.state.campanhas)
+                            .map(
+                                key => this.renderCampanha( key, this.state.campanhas[key] )
+                            )
+                        }
+                    </div>
+                </section>
+                }
             </div>
         )
     }
