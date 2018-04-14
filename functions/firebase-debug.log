@@ -1,0 +1,43 @@
+[debug] [2018-04-14T00:02:48.806Z] ----------------------------------------------------------------------
+[debug] [2018-04-14T00:02:48.822Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Siqueiras\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only functions
+[debug] [2018-04-14T00:02:48.823Z] CLI Version:   3.18.4
+[debug] [2018-04-14T00:02:48.823Z] Platform:      win32
+[debug] [2018-04-14T00:02:48.823Z] Node Version:  v8.11.1
+[debug] [2018-04-14T00:02:48.861Z] Time:          Fri Apr 13 2018 21:02:48 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-04-14T00:02:48.861Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-14T00:02:48.956Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-14T00:02:48.957Z] > authorizing via signed-in user
+[debug] [2018-04-14T00:02:48.967Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-14T00:02:48.968Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/bcDhZLbMBvZrLTnhVw1baBJq1Vaz2DpnsA133yhYahw',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Apr 13 2018 21:02:48 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-04-14T00:02:50.059Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T00:02:50.069Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/bora-ajudar-65c83  
+  
+ Fri Apr 13 2018 21:02:50 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-04-14T00:02:51.896Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T00:02:51.898Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/bora-ajudar-65c83/tokens  
+  
+ Fri Apr 13 2018 21:02:51 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-04-14T00:02:54.017Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T00:02:54.019Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/bora-ajudar-65c83  
+  
+ Fri Apr 13 2018 21:02:54 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-04-14T00:02:55.501Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Siqueiras\Desktop\Projetos\HandsOn-DevReactJs_2th_Edition'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-14T00:02:59.166Z] Fetching environment
+[debug] [2018-04-14T00:02:59.170Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/829331095005:getServerAppConfig  
+  
+ Fri Apr 13 2018 21:02:59 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-04-14T00:03:01.076Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-14T00:03:01.077Z] Starting @google-cloud/functions-emulator
+[debug] [2018-04-14T00:03:10.969Z] Parsing function triggers
+[info] +  functions: api: http://localhost:5000/bora-ajudar-65c83/us-central1/api

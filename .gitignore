@@ -10,6 +10,9 @@
 # production
 /build
 
+# firebase functions
+/functions/node_modules
+
 # misc
 .DS_Store
 .env.local
