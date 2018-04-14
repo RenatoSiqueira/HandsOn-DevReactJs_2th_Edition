@@ -18,7 +18,8 @@ class AdminCampanhas extends Component{
         this.state = {
             isLoading: false,
             campanhas: {},
-            error: false
+            error: false,
+            tipo: ''
         }
 
         this.renderCampanha = this.renderCampanha.bind(this)
@@ -65,30 +66,32 @@ class AdminCampanhas extends Component{
         const meta = (this.state.tipo === 'doacao')? this.meta.value : null
         const doado = (this.state.tipo === 'doacao')? this.doado.value : null
 
-        base.push('campanhas', {
-            data: { nome, descricao, subTitulo, tipo, comoDoar, meta, doado },
-            then: 
-                err => {
-                    if(!err){
-                        this.nome.value = ''
-                        this.descricao.value = ''
-                        this.subTitulo.value = ''
+        if(this.state.tipo !== ''){
+            base.push('campanhas', {
+                data: { nome, descricao, subTitulo, tipo, comoDoar, meta, doado },
+                then: 
+                    err => {
+                        if(!err){
+                            this.nome.value = ''
+                            this.descricao.value = ''
+                            this.subTitulo.value = ''
 
-                        this.setState({ tipo: '' })
+                            this.setState({ tipo: '' })
 
-                        if(this.meta){
-                            this.meta.value = ''
+                            if(this.meta){
+                                this.meta.value = ''
+                            }
+                            if(this.doado){
+                                this.doado.value = ''
+                            }
+                            if(this.comoDoar){
+                                this.comoDoar.value = ''
+                            }                        
                         }
-                        if(this.doado){
-                            this.doado.value = ''
-                        }
-                        if(this.comoDoar){
-                            this.comoDoar.value = ''
-                        }                        
                     }
                 }
-            }
-        )
+            )
+        }
     }
     render(){
         return(
