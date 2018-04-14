@@ -10,6 +10,9 @@ const Divbottom = styled.div`
 const Divtop = styled.div`
     margin-top: 0.5rem;
 `
+const Letteruppercase = styled.button`
+    text-transform: uppercase;
+`
 
 class AdminCampanhas extends Component{
     constructor(props){
@@ -48,7 +51,23 @@ class AdminCampanhas extends Component{
         return (
             <Divbottom key={key} className='card'>
                 <div className='card-header'>
-                   Campanha <strong>{campanha.nome}</strong>
+                    <div className='row'>
+                        <div className='col-md-4'>
+                            Campanha <strong>{campanha.nome}</strong><br />
+                            <small>Sub Título: <strong>{campanha.subTitulo}</strong></small>
+                        </div>
+                        <div className='col-md-4 offset-md-4'>
+                            <div className='btn-group' role='group'>
+                                <Letteruppercase type='button' className={ campanha.tipo === 'doacao'? 'btn btn-success' : 'btn btn-primary' }>{campanha.tipo}</Letteruppercase>
+                                { campanha.tipo === 'doacao' && 
+                                    <button type='button' className='btn btn-dark'>Meta R$ {campanha.meta}</button>
+                                }
+                                { campanha.tipo === 'doacao' && 
+                                    <button type='button' className='btn btn-info'>Doado R$ {campanha.doado}</button>
+                                }
+                            </div>
+                        </div>
+                    </div>                   
                 </div>
                 <div className='card-body'>
                     <p className='card-text'>{campanha.descricao}</p>
