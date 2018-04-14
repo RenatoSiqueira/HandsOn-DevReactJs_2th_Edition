@@ -8,6 +8,7 @@ Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno.
 - Criação de um componente AdminHome externo
 - Criação de um layout de Login
 - Alterações do layout do Gerenciamento de Campanhas dentro da seção Admin
+- Alterações nas rotas, abrangendo Rotas inválidas (Error 404)
 - Inclusão de um menu específico para o Admin
 - Inclusão de opção Administrador no menu geral
 - Inclusão do Styled Components para correções de CSS no componente AdminCampanhas
