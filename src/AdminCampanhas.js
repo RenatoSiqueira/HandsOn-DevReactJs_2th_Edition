@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 import base from './base'
+import styled from 'styled-components'
 
 import Loading from './Loading'
+
+const Divbottom = styled.div`
+    margin-bottom: 0.5rem;
+`
+const Divtop = styled.div`
+    margin-top: 0.5rem;
+`
 
 class AdminCampanhas extends Component{
     constructor(props){
@@ -37,16 +45,15 @@ class AdminCampanhas extends Component{
     }
     renderCampanha(key, campanha){
         return (
-            <div key={key} className='card'>
+            <Divbottom key={key} className='card'>
                 <div className='card-header'>
-                    Campanha Id: {key}
+                   Campanha <strong>{campanha.nome}</strong>
                 </div>
                 <div className='card-body'>
-                    <h5 className='card-title'>{campanha.nome}</h5>
                     <p className='card-text'>{campanha.descricao}</p>
                     <button onClick={ () => this.removeCampanha(key) } className='btn btn-danger'>Remover</button>
                 </div>
-            </div>
+            </Divbottom>
         )
     }
     handleSave(){
@@ -86,7 +93,7 @@ class AdminCampanhas extends Component{
     render(){
         return(
             <div className='card'>
-                <div className='container'>
+                <Divtop className='container'>
                     <h2>Nova Campanha</h2>
 
                     <div className='form-group'>
@@ -104,12 +111,12 @@ class AdminCampanhas extends Component{
                         <textarea className='form-control' id='inputCampanha' placeholder='Faça a descrição completa da campanha' rows='3' ref={ ref => this.descricao = ref } required />
                         <small className='form-text text-muted'>Descrição da Campanha; Inclua o máximo de detalhes.</small>
                     </div>                
-                    <div className='form-check form-check-inline'>
+                    <Divbottom className='form-check form-check-inline'>
                         <input className='form-check-input' type='radio' name='tipo' id='doacao' onClick={ ()=> this.setState({ tipo: 'doacao'}) } />
                         <label className='form-check-label' htmlFor='doacao'>
                             Doação
                         </label>
-                    </div>
+                    </Divbottom>
                     <div className='form-check form-check-inline'>
                         <input className='form-check-input' type='radio' name='tipo' id='produtos' onClick={ ()=> this.setState({ tipo: 'produtos'}) } />
                         <label className='form-check-label' htmlFor='produtos'>
@@ -145,10 +152,10 @@ class AdminCampanhas extends Component{
                         </div>
                     }
 
-                    <div className='form-group'>
+                    <Divtop className='form-group'>
                         <button onClick={this.handleSave} className='btn btn-primary'>Salvar Nova Campanha</button>
-                    </div>
-                </div>
+                    </Divtop>
+                </Divtop>
 
                 { this.state.isLoading && <Loading /> }
 
@@ -156,7 +163,7 @@ class AdminCampanhas extends Component{
                 !this.state.isLoading && 
                 <section className='page-section'>
                     <div className='container'>
-                        <h2>Campanhas</h2>
+                        <h2>Campanhas Cadastradas</h2>
                         { Object
                             .keys(this.state.campanhas)
                             .map(
