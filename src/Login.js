@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { auth } from './base'
+import styled from 'styled-components'
+
+const Divlogin = styled.div`
+width: 100%;
+max-width: 330px;
+padding: 15px;
+margin: 2rem auto;
+background-color: #f5f5f5;
+`
 
 class Login extends Component{
     constructor(props){
@@ -41,16 +50,21 @@ class Login extends Component{
             return <Redirect to='/admin' />
         }
         return(
-            <div>
-                <input type='email' ref={ref => this.email = ref} />
-                <input type='passwd' ref={ref => this.passwd = ref} />
-                <button onClick={this.handleLogin} disabled={this.state.isLogging}>Entrar</button>
-                <div>
-                    { this.state.error && 
-                        <p className='alert alert-danger'>{this.state.error}</p>
-                    }
+            <Divlogin>
+                <div className='login'>
+                    <h1 className='h3 mb-3 font-weight-normal'>Login</h1>
+                    <div className='conteiner'>
+                        { this.state.error && 
+                            <p className='alert alert-danger'>{this.state.error}</p>
+                        }                    
+                        <label htmlFor='inputEmail' className='sr-only'>Email:</label>
+                        <input type='email' ref={ref => this.email = ref} id='inputEmail' className='form-control' placeholder='Qual seu email?' required autoFocus />
+                        <label htmlFor='inputPassword' className='sr-only'>Senha</label>
+                        <input type='passwd' ref={ref => this.passwd = ref} id='inputPassword' className='form-control' placeholder='Insira sua Senha' required />
+                        <button className='btn btn-lg btn-primary btn-block' onClick={this.handleLogin} disabled={this.state.isLogging}>Entrar</button>
+                    </div>
                 </div>
-            </div>
+            </Divlogin>
         )
     }
 }
