@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from './Footer'
+import Error404 from './Error404'
 import Home from './Home'
 import Sobre from './Sobre'
 import Contato from './Contato'
@@ -23,7 +24,7 @@ class App extends Component {
           <Route path="/contato" component={Contato} />
           <Route path="/admin" component={Admin} />
           <Route path='/login' component={Login} />
-          <Route component={Home} />
+          <Route component={Error404} />
         </Switch>
         <Footer />
       </div>
