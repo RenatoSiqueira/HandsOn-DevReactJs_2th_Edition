@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import base from './base'
+import base from '../base'
 
-import Loading from './Loading'
+import Loading from '../Common/Loading'
 
 class Campanhas extends Component{
     constructor(props){

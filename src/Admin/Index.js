@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { Redirect, Route } from 'react-router-dom'
-import { auth } from './base'
+import { auth } from '../base'
 
+import AdminHeader from './AdminHeader'
 import AdminHome from './AdminHome'
-import Loading from './Loading'
 import AdminCampanhas from './AdminCampanhas'
+import AdminNewCampanha from './AdminNewCampanha'
+
+import Loading from '../Common/Loading'
 
 class Admin extends Component{
     constructor(props){
@@ -36,8 +39,10 @@ class Admin extends Component{
         } else 
         return(
             <div>
-                <Route path='/' component={AdminHome} />
+                <AdminHeader />
+                <Route exact path={`${this.props.match.url}/`} component={AdminHome} />
                 <Route path={`${this.props.match.url}/campanhas`} component={AdminCampanhas} />
+                <Route path={`${this.props.match.url}/novacampanha`} component={AdminNewCampanha} />
             </div>
         )
     }

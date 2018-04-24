@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { auth } from './base'
+import { auth } from '../base'
 import styled from 'styled-components'
 
 const Divlogin = styled.div`
@@ -58,9 +58,9 @@ class Login extends Component{
                             <p className='alert alert-danger'>{this.state.error}</p>
                         }                    
                         <label htmlFor='inputEmail' className='sr-only'>Email:</label>
-                        <input type='email' ref={ref => this.email = ref} id='inputEmail' className='form-control' placeholder='Qual seu email?' required autoFocus />
+                        <input style={{'margin-bottom': '10px'}} type='email' ref={ref => this.email = ref} id='inputEmail' className='form-control' placeholder='Qual seu email?' required autoFocus />
                         <label htmlFor='inputPassword' className='sr-only'>Senha</label>
-                        <input type='passwd' ref={ref => this.passwd = ref} id='inputPassword' className='form-control' placeholder='Insira sua Senha' required />
+                        <input style={{'margin-bottom': '10px'}} type='passwd' ref={ref => this.passwd = ref} id='inputPassword' className='form-control' placeholder='Insira sua Senha' required />
                         <button className='btn btn-lg btn-primary btn-block' onClick={this.handleLogin} disabled={this.state.isLogging}>Entrar</button>
                     </div>
                 </div>

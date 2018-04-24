@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Header from './Header'
-import Footer from './Footer'
-import Error404 from './Error404'
-import Home from './Home'
-import Sobre from './Sobre'
-import Contato from './Contato'
-import Campanhas from './Campanhas'
-import Admin from './Admin'
-import Login from './Login'
+import Header from './Common/Header'
+import Footer from './Common/Footer'
+import Error404 from './Common/Error404'
+
+import Home from './Sections/Home'
+import Sobre from './Sections/Sobre'
+import Contato from './Sections/Contato'
+import Campanhas from './Sections/Campanhas'
+import Login from './Sections/Login'
+
+import Admin from './Admin/Index'
 
 class App extends Component {
   render() {
