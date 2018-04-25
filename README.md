@@ -4,6 +4,10 @@ Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno.
 
 
 ## Algumas Features Adicionais Incluídas
+- Reordenação das Seções
+- Criação da Seção Dashboard (a concluir)
+- Separação das Seções Gerenciar Campanhas e Criar Nova Campanha
+
 - Criação de um componente de uso geral para loadings
 - Criação de um componente AdminHome externo
 - Criação de um layout de Login
@@ -15,4 +19,3 @@ Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno.
 - Inclusao de Etiquetas para distinção/acompanhamento das Campanhas no AdminCampanhas
 - Inclusão de procedimentos para evitar de gravar campanha sem Tipo definido
 - Correção/Inclusão dos .JS para o correto funcionamento do menu em modo responsivo
-
