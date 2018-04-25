@@ -1,8 +1,11 @@
 const functions = require('firebase-functions')
+const admin = require('firebase-admin')
 
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+
+admin.initializeApp()
 
 const request = require('request-promise')
 const parse = require('xml2js').parseString
@@ -42,6 +45,34 @@ app.post('/donate', (req, res) => {
             })
         })
     })
+})
+
+app.post('/webhook', (req, res) => {
+    const notificationCode = req.body.notificationCode
+    const consultaNotificacao = 'https://ws.pagseguro.uol.com.br/v3/transactions/notifications/'
+    request(consultaNotificacao+notificationCode+'?token='+token+'&email='+email)
+    .then(notificationXml => {
+            parse(notificationXml, (err, transactionJson) => {
+                const transaction = transactionJson.transaction
+                const status = transaction.status[0]
+                const amount = transaction.grossAmount[0]
+                const campanha = transaction.items[0].item[0].id[0]
+
+                /*
+                admin
+                .database()
+                .ref('/transactions/')
+                .set({
+                    transaction
+                })
+                .then( () => {
+                    res
+                })
+                */
+                res.send('Ok')
+            })
+        }
+    )    
 })
 
 exports.api = functions.https.onRequest(app)
