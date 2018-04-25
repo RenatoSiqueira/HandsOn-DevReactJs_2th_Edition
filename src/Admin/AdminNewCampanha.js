@@ -8,9 +8,6 @@ const Divbottom = styled.div`
 const Divtop = styled.div`
     margin-top: 0.5rem;
 `
-const Letteruppercase = styled.button`
-    text-transform: uppercase;
-`
 
 class AdminCampanhas extends Component{
     constructor(props){
