@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const AdminHeader = () =>{
     return (
@@ -11,13 +11,13 @@ const AdminHeader = () =>{
             <div className='collapse navbar-collapse' id='navbarSupportedContent'>
                 <ul className='navbar-nav mr-auto'>
                     <li className='nav-item active'>
-                        <Link className='nav-link text-uppercase text-expanded' to='/admin'>Principal</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/admin'>Principal</NavLink>
                     </li>            
                     <li className='nav-item'>
-                        <Link className='nav-link text-uppercase text-expanded' to='/admin/campanhas'>Gerenciar Campanhas</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/admin/campanhas' activeStyle={{color: '#e6a756'}}>Gerenciar Campanhas</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <Link className='nav-link text-uppercase text-expanded' to='/admin/novacampanha'>Criar Campanha</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/admin/novacampanha' activeStyle={{color: '#e6a756'}}>Criar Campanha</NavLink>
                     </li>                    
                 </ul>
             </div>

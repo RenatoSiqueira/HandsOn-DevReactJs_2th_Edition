@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -11,28 +11,26 @@ const Header = () => {
             { /* Navigation */ }
             <nav className='navbar navbar-expand-lg navbar-dark py-lg-4' id='mainNav'>
             <div className='container'>
-                <Link className='navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none' to='/'>Asilo Melhor Idade</Link>
+                <NavLink className='navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none' to='/'>Asilo Melhor Idade</NavLink>
                 <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
                 <span className='navbar-toggler-icon'></span>
                 </button>
                 <div className='collapse navbar-collapse' id='navbarResponsive'>
                 <ul className='navbar-nav mx-auto'>
                     <li className='nav-item active px-lg-4'>
-                    <Link className='nav-link text-uppercase text-expanded' to='/'>Início
-                        <span className='sr-only'>(current)</span>
-                    </Link>
+                    <NavLink className='nav-link text-uppercase text-expanded' to='/'>Início</NavLink>
                     </li>
                     <li className='nav-item px-lg-4'>
-                        <Link className='nav-link text-uppercase text-expanded' to='/sobre'>Sobre</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/sobre' activeStyle={{color: '#e6a756'}}>Sobre</NavLink>
                     </li>
                     <li className='nav-item px-lg-4'>
-                        <Link className='nav-link text-uppercase text-expanded' to='/campanhas'>Campanhas</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/campanhas' activeStyle={{color: '#e6a756'}}>Campanhas</NavLink>
                     </li>
                     <li className='nav-item px-lg-4'>
-                        <Link className='nav-link text-uppercase text-expanded' to='/contato'>Contato</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/contato' activeStyle={{color: '#e6a756'}}>Contato</NavLink>
                     </li>
                     <li className='nav-item px-lg-4'>                        
-                        <Link className='nav-link text-uppercase text-expanded' to='/admin'>Administração</Link>
+                        <NavLink className='nav-link text-uppercase text-expanded' to='/admin' activeStyle={{color: '#e6a756'}}>Administração</NavLink>
                     </li>                    
                 </ul>
                 </div>
