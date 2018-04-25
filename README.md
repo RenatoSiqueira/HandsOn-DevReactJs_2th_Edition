@@ -7,6 +7,7 @@ Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno.
 - Reordenação das Seções
 - Criação da Seção Dashboard (a concluir)
 - Separação das Seções Gerenciar Campanhas e Criar Nova Campanha
+- Adicionado Troca de Cor ao Selecionar um Item do Menu (ambos os menus)
 
 - Criação de um componente de uso geral para loadings
 - Criação de um componente AdminHome externo
