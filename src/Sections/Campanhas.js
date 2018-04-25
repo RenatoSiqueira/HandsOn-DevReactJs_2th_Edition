@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import base from '../base'
+import axios from 'axios'
 
 import Loading from '../Common/Loading'
 
@@ -26,6 +27,17 @@ class Campanhas extends Component{
         
     }
 
+    handleDonate(key){
+        axios
+            .post('api/donate', {
+                campanha: key,
+                valor: 3
+            })
+            .then( data => {
+                window.location = data.data.url
+            })
+    }
+
     renderCampanha(key, campanha){
         return (
             <section key={key} className='page-section'>
@@ -50,7 +62,7 @@ class Campanhas extends Component{
                             </div>
                             <p>Meta: R$ 5.000,00 / Atingidos: R$ 2.500,00</p>
                             <div>
-                                <button className='btn btn-success'>Contribuir</button>
+                                <button className='btn btn-success' onClick={ () => this.handleDonate(key) }>Contribuir</button>
                             </div>
                         </div> 
                     }
