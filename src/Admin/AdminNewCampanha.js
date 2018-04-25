@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import base from '../base'
 import styled from 'styled-components'
 
-import Loading from '../Common/Loading'
-
 const Divbottom = styled.div`
     margin-bottom: 0.5rem;
 `
