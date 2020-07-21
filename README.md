@@ -1,7 +1,5 @@
-# HandsOn-DevReactJs_2th_Edition
-Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno. 
-
-
+# Software do Bem - Edição Bora Ajudar : Morada da Melhor Idade - Casa de Repouso
+Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno. (Out/2018)
 
 ## Algumas Features Adicionais Incluídas
 - Reordenação das Seções
@@ -20,3 +18,4 @@ Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno.
 - Inclusao de Etiquetas para distinção/acompanhamento das Campanhas no AdminCampanhas
 - Inclusão de procedimentos para evitar de gravar campanha sem Tipo definido
 - Correção/Inclusão dos .JS para o correto funcionamento do menu em modo responsivo
+- Inclusão de Logout

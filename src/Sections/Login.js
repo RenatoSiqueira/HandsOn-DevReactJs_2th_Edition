@@ -11,8 +11,8 @@ margin: 2rem auto;
 background-color: #f5f5f5;
 `
 
-class Login extends Component{
-    constructor(props){
+class Login extends Component {
+    constructor(props) {
         super(props)
 
         this.state = {
@@ -26,41 +26,41 @@ class Login extends Component{
 
         this.handleLogin = this.handleLogin.bind(this)
     }
-    handleLogin(){
-        this.setState({ 
+    handleLogin() {
+        this.setState({
             isLogging: true,
-            error: null 
+            error: null
         })
         auth
-        .signInWithEmailAndPassword(this.email.value, this.passwd.value)
-        .then( (user) => {
-            this.setState({
-                isLoggedIn: true
+            .signInWithEmailAndPassword(this.email.value, this.passwd.value)
+            .then((user) => {
+                this.setState({
+                    isLoggedIn: true
+                })
             })
-        })
-        .catch( error => {
-            this.setState({
-                error: error.message,
-                isLogging: false
+            .catch(error => {
+                this.setState({
+                    error: error.message,
+                    isLogging: false
+                })
             })
-        })
     }
-    render(){
-        if(this.state.isLoggedIn){
+    render() {
+        if (this.state.isLoggedIn) {
             return <Redirect to='/admin' />
         }
-        return(
+        return (
             <Divlogin>
                 <div className='login'>
                     <h1 className='h3 mb-3 font-weight-normal'>Login</h1>
                     <div className='conteiner'>
-                        { this.state.error && 
+                        {this.state.error &&
                             <p className='alert alert-danger'>{this.state.error}</p>
-                        }                    
+                        }
                         <label htmlFor='inputEmail' className='sr-only'>Email:</label>
-                        <input style={{'margin-bottom': '10px'}} type='email' ref={ref => this.email = ref} id='inputEmail' className='form-control' placeholder='Qual seu email?' required autoFocus />
+                        <input style={{ 'marginBottom': '10px' }} type='email' ref={ref => this.email = ref} id='inputEmail' className='form-control' placeholder='Qual seu email?' required autoFocus />
                         <label htmlFor='inputPassword' className='sr-only'>Senha</label>
-                        <input style={{'margin-bottom': '10px'}} type='passwd' ref={ref => this.passwd = ref} id='inputPassword' className='form-control' placeholder='Insira sua Senha' required />
+                        <input style={{ 'marginBottom': '10px' }} type='password' ref={ref => this.passwd = ref} id='inputPassword' className='form-control' placeholder='Insira sua Senha' required />
                         <button className='btn btn-lg btn-primary btn-block' onClick={this.handleLogin} disabled={this.state.isLogging}>Entrar</button>
                     </div>
                 </div>
