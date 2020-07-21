@@ -1,6 +1,10 @@
 # Software do Bem - Edição Bora Ajudar : Morada da Melhor Idade - Casa de Repouso
 Projeto desenvolvido durante o HandsOn DevReactJS do DevPleno. (Out/2018)
 
+## Screenshots da seção Admin
+![GerenciarCampanhas](https://github.com/RenatoSiqueira/HandsOn-DevReactJs_2th_Edition/blob/master/gerenciarCampanhas.png)
+![CriarCampanhas](https://github.com/RenatoSiqueira/HandsOn-DevReactJs_2th_Edition/blob/master/criarCampanhas.png)
+
 ## Algumas Features Adicionais Incluídas
 - Reordenação das Seções
 - Criação da Seção Dashboard (a concluir)
